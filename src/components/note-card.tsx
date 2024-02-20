@@ -30,7 +30,10 @@ export function NoteCard({ note }: NoteCardProps) {
           </Dialog.Close>
           <div className="flex flex-1 flex-col gap-3 p-5">
             <span className="text-sm font-medium text-slate-200">
-              {note.date.toISOString()}
+              {formatDistanceToNow(note.date, {
+                locale: ptBR,
+                addSuffix: true,
+              })}
             </span>
             <p className="text-sm leading-6 text-slate-300">{note.content}</p>
           </div>
